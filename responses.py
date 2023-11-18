@@ -6,11 +6,9 @@ import dotenv
 url = "http://localhost:8000/openai"
 url_row = "http://localhost:8000/addrow"
 
-dotenv.load_dotenv()
-apik = os.environ.get('OPENAI_API_KEY')
 
 
-client = OpenAI(api_key=apik)
+
 
 
 def handle_request(message) -> str:
@@ -18,6 +16,12 @@ def handle_request(message) -> str:
     b=""
     print(message.author.roles)
     print([r.name for r in message.author.roles])
+
+    if(message.content=="help"):
+        return """`1. Create a new spread sheet. (take care that name of spread sheet has no spaces)\n2. Give editor access to given mail autoexcelserviceaccount@autoexcel-405401.iam.gserviceaccount.com\n3. Now give a small context for your business using context ".....".\n4. Give the columns of excel sheet in order using columns ".....".\n5. Set sheet name using sheet "..."\n6. Now you can send unsorted data to the bot and it will be sorted and added to the sheet.\n`
+        
+        """
+
     if message.content.startswith("context")and 'Manager' in [r.name for r in message.author.roles]:
         a = message.content[7:]
         
