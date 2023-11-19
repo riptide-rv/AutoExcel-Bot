@@ -4,6 +4,10 @@ import configmodal
 
 from discord import app_commands
 from discord.ext import commands
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 bot = commands.Bot(command_prefix='!', intents=discord.Intents.all())
 
@@ -14,7 +18,8 @@ async def send_message(message):
 
 
 def run_discord_bot():
-    bot.run('MTE3NDc1OTgyNTM2ODk0MDYxNg.G9mB8L.fRczfvYs6nU1l7-RHVJxLybvZ2dnhqlYyx6dag')
+    BOTKEY = os.getenv('BOTKEY')
+    bot.run(BOTKEY)
 
 
 client = discord.Client(intents=discord.Intents.all())
