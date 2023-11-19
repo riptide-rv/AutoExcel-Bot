@@ -45,8 +45,8 @@ def handle_request(message) -> str:
         return f"columns changed to {b}"
     p_message = message.content.lower()
     data = {
-    "context": os.environ.get('A'),
-    "columns": os.environ.get('B'),
+    "context": os.environ.get('B'),
+    "columns": os.environ.get('C'),
     "data": p_message
 }
     print(data)
@@ -59,7 +59,7 @@ def handle_request(message) -> str:
     print(response.json())
     response_data = response.json()
     print(response)
-    row_data= requests.post(url_row+f"/{os.environ.get('C')}", json=response_data)
+    row_data= requests.post(url_row+f"/{os.environ.get('A')}", json=response_data)
     print(row_data)
     
     return   format_message(row_data.json())
