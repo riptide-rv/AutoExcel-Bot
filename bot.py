@@ -54,7 +54,7 @@ async def config(interaction: discord.Interaction):
 @bot.tree.command(name="help")
 async def help(interaction: discord.Interaction):
     message =  """1. Create a new spread sheet. (take care that name of spread sheet has no spaces)
-2. Give editor access to given mail 
+2. Give editor access to mail 
  **autoexcelserviceaccount@autoexcel-405401.iam.gserviceaccount.com**
 3. Use **/config** to setup the bot
 4. Now send unsorted data to the bot and it will be sorted and added to the sheet."""
