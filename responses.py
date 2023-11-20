@@ -3,8 +3,8 @@ import os
 import requests
 import dotenv
 
-url = "http://localhost:8000/openai"
-url_row = "http://localhost:8000/addrow"
+url = "https://auto-excel-api.onrender.com/openai"
+url_row = "https://auto-excel-api.onrender.com/addrow"
 
 
 
